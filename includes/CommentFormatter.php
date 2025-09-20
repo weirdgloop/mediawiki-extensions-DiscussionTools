@@ -868,10 +868,11 @@ class CommentFormatter {
 				)->toString();
 			}
 		);
+		$msgCache = [];
 		$batchModifyElements->add(
 			static fn ( SerializerNode $node ): bool => $node->name === 'mw:dt-ellipsisbutton' ||
 				$node->name === 'dt-ellipsisbutton',
-			static function ( SerializerNode $node ) use ( $contextSource, $isMobile ) {
+			static function ( SerializerNode $node ) use ( $contextSource, $isMobile, &$msgCache ) {
 				$overflowMenuData = json_decode( $node->attrs['data'], true );
 
 				'@phan-var array $overflowMenuData';
@@ -899,6 +900,12 @@ class CommentFormatter {
 							return $itemB->getWeight() - $itemA->getWeight();
 						}
 					);
+					// Parse label messages.
+					// Only parse each message once per pageview, if possible (T405135)
+					foreach ( $overflowMenuItems as $item ) {
+						/** @var OverflowMenuItem $item */
+						$item->parseLabel( $contextSource, $msgCache );
+					}
 
 					$overflowButton = new ButtonMenuSelectWidget( [
 						'classes' => [

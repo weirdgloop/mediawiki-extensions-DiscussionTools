@@ -6,6 +6,7 @@ use MediaWiki\Cache\GenderCache;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\DiscussionTools\BatchModifyElements;
 use MediaWiki\Json\FormatJson;
+use MediaWiki\Language\RawMessage;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Parser\ParserOutput;
@@ -82,7 +83,7 @@ class CommentFormatterTest extends IntegrationTestCase {
 		$outputPage->method( 'getUser' )->willReturn( $user );
 		$outputPage->method( 'getLanguage' )->willReturn( $qqxLang );
 		$outputPage->method( 'getSkin' )->willReturn( $skin );
-		$outputPage->method( 'msg' )->willReturn( 'a label' );
+		$outputPage->method( 'msg' )->willReturn( new RawMessage( 'a label' ) );
 
 		MockCommentFormatter::$parser = $this->createParser( $config, $data );
 		$commentFormatter = TestingAccessWrapper::newFromClass( MockCommentFormatter::class );
