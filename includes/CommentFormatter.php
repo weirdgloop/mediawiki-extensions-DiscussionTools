@@ -486,6 +486,11 @@ class CommentFormatter {
 		string $text, BatchModifyElements &$batchModifyElements, IContextSource $contextSource,
 		SubscriptionStore $subscriptionStore, bool $isMobile, bool $useButtons
 	): void {
+		// Optimization: Only parse and process the HTML if it seems to contain our tags (T400115)
+		if ( !str_contains( $text, '<mw:dt-subscribebutton' ) && !str_contains( $text, '<dt-subscribebutton' ) ) {
+			return;
+		}
+
 		$doc = DOMCompat::newDocument( true );
 
 		$itemDataByName = [];
