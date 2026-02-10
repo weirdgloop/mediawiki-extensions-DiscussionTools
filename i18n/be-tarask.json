@@ -6,7 +6,8 @@
 			"Red Winged Duck",
 			"Renessaince",
 			"Vlad5250",
-			"Woytecr"
+			"Woytecr",
+			"Ucukor"
 		]
 	},
 	"discussiontools": "Інструмэнты абмеркаваньня",
@@ -59,7 +60,7 @@
 	"discussiontools-replywidget-reply": "{{GENDER:|Адказаць}}",
 	"discussiontools-replywidget-summary": "Апісаньне",
 	"discussiontools-replywidget-watchthis": "Дадаць гэтую старонку ў свой [[Special:Watchlist|сьпіс назіраньня]]",
-	"discussiontools-topicheader-authorcount": "$1 {{PLURAL:$1|асоба|асобы|асобаў}} у абмеркаваньні",
+	"discussiontools-topicheader-authorcount": "$1 {{PLURAL:$1|асоба ў|асобы ў|асобаў у}} абмеркаваньні",
 	"discussiontools-topicheader-commentcount": "$1 {{PLURAL:$1|камэнтар|камэнтары|камэнтароў}}",
 	"discussiontools-topicheader-latestcomment": "Апошні камэнтар: $1",
 	"discussiontools-topicsubscription-button-subscribe": "падпісацца",
@@ -76,5 +77,6 @@
 	"tag-discussiontools-edit": "Адрэдагаваны камэнтар",
 	"tag-discussiontools-edit-description": "Карыстальнік адрэдагаваў існы камэнтар праз DiscussionTools",
 	"tag-discussiontools-newtopic": "[{{int:discussiontools-replywidget-newtopic-link}} Новая тэма]",
-	"tag-discussiontools-newtopic-description": "Карыстальнік дадаў на старонку новую тэму праз DiscussionTools"
+	"tag-discussiontools-newtopic-description": "Карыстальнік дадаў на старонку новую тэму праз DiscussionTools",
+	"tag-discussiontools-source-description": "DiscussionTools быў у рэжыму праўкі коду"
 }
